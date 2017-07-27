@@ -9,7 +9,7 @@ DRIVER=${DRIVER:-'virtualbox'}
 DRIVER_OPTS=${DRIVER_OPTS:-''}
 NUM_COMPUTE_NODES=${NUM_COMPUTE_NODES:-1}
 CLUSTER_NAME_PREFIX=${CLUSTER_NAME_PREFIX:-'local-hadoop'}
-CLUSTER_ADVERTISE=${CLUSTER_ADVERTISE:-'eth1:2376'}
+CLUSTER_ADVERTISE=${CLUSTER_ADVERTISE:-'eth0:2376'} #eth1 is changed to eth0
 HADOOP_IMAGE=${HADOOP_IMAGE:-'hadoop-benchmark/hadoop'}
 HADOOP_IMAGE_DIR=${HADOOP_IMAGE_DIR:-'scenarios/vanilla-hadoop/images/hadoop'}
 
@@ -393,9 +393,9 @@ destroy_cluster() {
   # network
   destroy_network $controller_node_name $network_name
 
-  stop_cluster
+  #stop_cluster #This should not be done while using the framework with scaleway cloud server provider.
 
-  sudo ifconfig vboxnet0 down && sudo ifconfig vboxnet0 up
+  #sudo ifconfig vboxnet0 down && sudo ifconfig vboxnet0 up #This is not necessary while using scaleway.
 
   # machines
   cmd="docker-machine ls --filter name=$docker_name_prefix-.*"

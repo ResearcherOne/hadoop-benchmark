@@ -69,3 +69,6 @@ Commands:
 
 - check the [demonstration](https://youtu.be/T6m4OM3nvGc) of using hadoop-benchmark on Grid5000
 
+## After Fork - Changelog
+-changed cluster.sh
+

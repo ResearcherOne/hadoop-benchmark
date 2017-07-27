@@ -1,0 +1,7 @@
+CLUSTER_NAME_PREFIX='scaleway-cluster-1'
+DRIVER='scaleway'
+DRIVER_OPTS='--scaleway-image=ubuntu-trusty'
+DRIVER_OPTS_CONSUL='--scaleway-image=ubuntu-trusty'
+NUM_COMPUTE_NODES=1
+HADOOP_IMAGE='hadoop-benchmark/hadoop'
+HADOOP_IMAGE_DIR='scenarios/vanilla-hadoop/images/hadoop'
