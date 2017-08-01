@@ -3,10 +3,11 @@ set -e
 source $(dirname $0)/../common.sh
 
 docker $controller_conn run \
+  --log-driver=journald \
   -t \
   --rm \
   --net hadoop-net \
-  --name hadoop-mapreduce-examples \
+  --name hadoop-mapreduce-examples-3 \
   -h hadoop-mapreduce-examples \
   hadoop-benchmark/hadoop \
   run \

@@ -465,6 +465,7 @@ start_hadoop() {
 
   # start graphite frontend
   start_container $controller_node_name graphite \
+	--log-driver=journald \
     -d \
     -h graphite \
     --restart=always \
@@ -477,6 +478,7 @@ start_hadoop() {
 
   # start controller
   start_container $controller_node_name controller \
+	--log-driver=journald \
     -h controller \
     --net $network_name \
     -p "8088:8088" \
@@ -497,6 +499,7 @@ start_hadoop() {
     local name="compute-$i"
     local machine="$compute_node_name-$i"
     start_container $machine $name \
+		--log-driver=journald \
       -h $name \
       --net $network_name \
       -p "8042:8042" \
