@@ -2,6 +2,7 @@
 set -e
 
 # allow to easily override common settings
+export CONFIG="scenarios/vanilla-hadoop/scaleway_cluster"
 [[ -f $CONFIG ]] && source $CONFIG
 
 # basics
@@ -11,7 +12,7 @@ NUM_COMPUTE_NODES=${NUM_COMPUTE_NODES:-1}
 CLUSTER_NAME_PREFIX=${CLUSTER_NAME_PREFIX:-'local-hadoop'}
 CLUSTER_ADVERTISE=${CLUSTER_ADVERTISE:-'eth0:2376'} #eth1 is changed to eth0
 HADOOP_IMAGE=${HADOOP_IMAGE:-'hadoop-benchmark/hadoop'}
-HADOOP_IMAGE_DIR=${HADOOP_IMAGE_DIR:-'scenarios/vanilla-hadoop/images/hadoop'}
+HADOOP_IMAGE_DIR=${HADOOP_IMAGE_DIR:-'scenarios/vanilla-hadoop/images/hadoop-custom-hpc'}
 
 # extension points
 EXT_AFTER_CONSUL_MACHINE=${EXT_AFTER_CONSUL_MACHINE:-''}

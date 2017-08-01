@@ -49,4 +49,13 @@
 		<name>yarn.nodemanager.localizer.address</name>
 		<value>0.0.0.0:8040</value>
 	</property>
+	<!-- Modifications for HPC -->
+	<property>
+		<name>yarn.nodemanager.resource.memory-mb</name>
+		<value>6666</value>
+	</property>
+	<property>
+		<name>yarn.nodemanager.vmem-pmem-ratio</name>
+		<value>2.1</value>
+	</property>
 </configuration>
