@@ -1,7 +1,7 @@
-CLUSTER_NAME_PREFIX='scaleway-cluster-2'
+CLUSTER_NAME_PREFIX='scaleway-cluster-20'
 DRIVER='scaleway'
-DRIVER_OPTS='--scaleway-image=ubuntu-trusty --scaleway-commercial-type=VC1L'
-DRIVER_OPTS_CONSUL='--scaleway-image=ubuntu-trusty --scaleway-commercial-type=VC1L'
+DRIVER_OPTS='--scaleway-image=ubuntu-trusty --scaleway-commercial-type=C2S --scaleway-volumes=50G'
+DRIVER_OPTS_CONSUL='--scaleway-image=ubuntu-trusty --scaleway-commercial-type=C2S'
 NUM_COMPUTE_NODES=3
 HADOOP_IMAGE='hadoop-benchmark/hadoop'
 HADOOP_IMAGE_DIR='scenarios/vanilla-hadoop/images/hadoop-custom-hpc'
